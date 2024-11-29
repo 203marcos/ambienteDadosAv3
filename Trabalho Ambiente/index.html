@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Página de Usuários</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Gerenciamento de Usuários</h1>
+            <button onclick="mostrarUsuarios()">Mostrar Usuários</button>
+            <button onclick="abrirModalAdicionarUsuario()">
+                Adicionar Usuário
+            </button>
+            <button onclick="adicionarUsuariosTeste()">
+                Adicionar 50 Usuários
+            </button>
+            <button onclick="adicionarUmMilhaoUsuarios()">
+                Adicionar 1 Milhão de Usuários
+            </button>
+        </div>
+        <!-- services.msc -->
+        <!-- Modal para mostrar usuários -->
+        <div id="userModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <div id="userList"></div>
+            </div>
+        </div>
+
+        <!-- Modal para adicionar usuário -->
+        <div id="addUserModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModalAdicionarUsuario()"
+                    >&times;</span
+                >
+                <h3>Adicionar Usuário</h3>
+                <form id="addUserForm">
+                    <label for="id_usuario">ID (opcional):</label>
+                    <input
+                        type="number"
+                        id="id_usuario"
+                        name="id_usuario"
+                    /><br />
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required /><br />
+                    <label for="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                    /><br />
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input
+                        type="date"
+                        id="data_nascimento"
+                        name="data_nascimento"
+                        required
+                    /><br />
+                    <label for="senha">Senha:</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        required
+                    /><br />
+                    <label for="plano_assinatura">Plano de Assinatura:</label>
+                    <select
+                        id="plano_assinatura"
+                        name="plano_assinatura"
+                        required
+                    >
+                        <option value="gratuito">Gratuito</option>
+                        <option value="premium">Premium</option></select
+                    ><br />
+                    <button type="button" onclick="adicionarUsuario()">
+                        Adicionar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
